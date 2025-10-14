@@ -70,7 +70,7 @@ def movie_3D(tail_length : int = 10):
         ax.set_zlim( - max_range/2, max_range/2)
         
         plt.tight_layout()
-        plt.savefig(nbuddied_path + f"/movie_dump/trajectories_{i}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(nbuddies_path + f"/movie_dump/trajectories_{i}.png", dpi=300, bbox_inches='tight')
 
     _recompile_movie_3D()
 
@@ -78,9 +78,9 @@ def _recompile_movie_3D():
     """
     Deletes movie if it exists then recreates it by compiling the pngs in movie_dump
     """
-    if os.path.exists(nbuddies+path+"/trajectories.mkv"):
-        os.remove(nbuddies+path+"/trajectories.mkv")
-    os.system(f"ffmpeg -framerate 12 -start_number 0 -i "+nbuddies_path+"/movie_dump/trajectories_%01d.png -q:v 0 "+nbuddies+path+"/trajectories.mkv")
+    if os.path.exists(nbuddies_path+"/trajectories.mkv"):
+        os.remove(nbuddies_path+"/trajectories.mkv")
+    os.system("ffmpeg -framerate 12 -start_number 0 -i "+nbuddies_path+"/movie_dump/trajectories_%01d.png -q:v 0 "+nbuddies_path+"/trajectories.mkv")
 
 
 def _find_last_batch_num():
