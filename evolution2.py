@@ -66,7 +66,7 @@ def update_params(data, tot_time, num_steps, delta_t, path, leapfrog = True):
     None - All output files are saved as picke file
     '''
 
-    batch_idx = 1
+    batch_idx = 0
     count = 0 # goes from 0 to num_steps - 1, used to check when to save the data  
     data_lst = [data] # initialized with the starting data, stores the evolved data batch-wise
     

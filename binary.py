@@ -176,7 +176,9 @@ delta_t_fraction = n_snapshots      # How many steps between two snapshots
                                     # to get an expected output files
 
 # Run the simulation here
-simulation( ICS_path, output_dir, Total_time, Total_time // n_snapshots // delta_t_fraction, Total_time // n_snapshots)
+#simulation( ICS_path, output_dir, Total_time, Total_time // n_snapshots // delta_t_fraction, Total_time // n_snapshots)
+delta_t = Total_time // n_snapshots // delta_t_fraction
+simulation( ICS_path, output_dir, Total_time, delta_t, Total_time // n_snapshots // delta_t)
 
 # Plot a circle with radius R, center at COM based on the case
 COM = [0,0]
